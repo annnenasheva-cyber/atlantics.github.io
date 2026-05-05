@@ -1,2 +1,2 @@
 <?php
-includ index.html;
+include index.html;
