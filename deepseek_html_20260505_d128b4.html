@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevExpert Integration | Партнер Битрикс24 — разработка и интеграция</title>
+    <meta name="description" content="Сертифицированный партнер Битрикс24. Разработка сайтов, интеграция CRM, миграция данных. Портфолио с копирайтами, перечень услуг.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f8f9fc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0b1c3a 0%, #1a2f4e 100%);
+            color: white;
+            padding: 48px 0 32px;
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .contacts {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .contacts a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contacts a:hover {
+            color: #3b82f6;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            padding: 16px 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* Sections */
+        section {
+            padding: 64px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #0b1c3a;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #1e3a8a;
+        }
+
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .portfolio-content {
+            padding: 24px;
+        }
+
+        .copyright {
+            background: #f1f5f9;
+            padding: 12px 16px;
+            font-family: monospace;
+            font-size: 13px;
+            border-left: 4px solid #3b82f6;
+            margin: 16px 0;
+            word-break: break-all;
+        }
+
+        .project-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Form */
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1c3a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 32px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1>DevExpert Integration</h1>
+            <p>Сертифицированный партнер Битрикс24 | Веб-разработка | Интеграция CRM</p>
+        </div>
+        <div class="contacts">
+            <span>📞 +7 (999) 123-45-67</span>
+            <span>✉️ <a href="mailto:partner@devexpert.ru">partner@devexpert.ru</a></span>
+            <span>💬 Telegram: @devexpert_partner</span>
+            <span>📍 Москва, ул. Тверская, 12</span>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <div class="nav-links">
+            <a href="#services">Услуги</a>
+            <a href="#portfolio">Портфолио</a>
+            <a href="#for-partners">Партнерам</a>
+            <a href="#contact">Контакты</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <!-- Услуги -->
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="badge">Для бизнеса</div>
+                    <h3>Разработка сайтов на Битрикс24 (Сайты24)</h3>
+                    <p>Корпоративные сайты, лендинги, интернет-магазины с высокой конверсией. Адаптивная верстка, SEO-оптимизация.</p>
+                </div>
+                <div class="service-card">
+                    <div class="badge">Для бизнеса</div>
+                    <h3>Интеграция CRM Битрикс24</h3>
+                    <p>Настройка воронок, роботов, телефонии, чат-ботов. Интеграция с 1С, сайтами и телеграм.</p>
+                </div>
+                <div class="service-card">
+                    <div class="badge">Для бизнеса</div>
+                    <h3>Миграция данных в Битрикс24</h3>
+                    <p>Перенос клиентов, сделок, товаров из AmoCRM, Salesforce, МоегоСклад, 1С-Битрикс.</p>
+                </div>
+                <div class="service-card">
+                    <div class="badge">Для бизнеса</div>
+                    <h3>Техподдержка и доработки</h3>
+                    <p>Срочные правки, защита от взлома, обновление модулей, SLA на 24/7.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Портфолио с копирайтами -->
+        <section id="portfolio">
+            <h2>Наше портфолио</h2>
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>🟢 Интернет-магазин «ТехноДом»</h3>
+                        <p><strong>Задача:</strong> Перенос 3500 товаров с самописной CRM на Битрикс24 + настройка синхронизации с 1С.</p>
+                        <p><strong>Результат:</strong> Автоматизация заказов, снижение времени обработки на 40%.</p>
+                        <div class="copyright">
+                            <!-- Обязательный копирайт -->
+                            © 2025 — Разработка и интеграция: DevExpert Studio (партнер Битрикс24)
+                        </div>
+                        <a href="#" class="project-link">🔗 technodom-example.ru →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>🟢 Юридическая фирма «Правовой щит»</h3>
+                        <p><strong>Задача:</strong> Сайт-визитка + CRM-воронка для захвата лидов.</p>
+                        <p><strong>Результат:</strong> 200+ лидов в первый месяц, автоматическая рассыка коммерческих предложений.</p>
+                        <div class="copyright">
+                            <!-- Обязательный копирайт -->
+                            Сайт разработан в партнерстве с DevExpert Integration. Поддержка Битрикс24.
+                        </div>
+                        <a href="#" class="project-link">🔗 pravovoy-example.ru →</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>🟢 Миграция с «1С-Битрикс: Управление сайтом»</h3>
+                        <p><strong>Задача:</strong> Перенос инфоблоков, пользователей и истории заказов на Битрикс24 (коробка).</p>
+                        <p><strong>Результат:</strong> Экономия на лицензии 70 000 ₽/год, скорость работы CRM выросла в 2 раза.</p>
+                        <div class="copyright">
+                            <!-- Обязательный копирайт -->
+                            Техническая миграция и поддержка: DevExpert Studio. Партнерская программа Битрикс24.
+                        </div>
+                        <a href="#" class="project-link">🔗 mirgroup-example.ru →</a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 32px; color: #475569;">
+                ✅ Все проекты содержат копирайт нашей студии в футере сайтов клиентов.
+            </p>
+        </section>
+
+        <!-- Отдельный блок для партнеров -->
+        <section id="for-partners">
+            <h2>Партнерам Битрикс24</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="badge">Специально для партнеров</div>
+                    <h3>Помощь в оформлении заказов</h3>
+                    <p>Поможем клиенту подобрать тариф Битрикс24. Оформляем заказ через ваш партнерский аккаунт — вы получаете откат.</p>
+                </div>
+                <div class="service-card">
+                    <div class="badge">Специально для партнеров</div>
+                    <h3>Аудит сайтов под лицензию Б24</h3>
+                    <p>Проверим готовность сайта к интеграции с CRM. Выдаем техническое задание.</p>
+                </div>
+                <div class="service-card">
+                    <div class="badge">Специально для партнеров</div>
+                    <h3>White label / без нашего копирайта</h3>
+                    <p>Работаем под вашим брендом. Передаем исходники и полную документацию.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма / Контакты -->
+        <section id="contact">
+            <h2>Оставить заявку на партнерство</h2>
+            <div class="form-container">
+                <form id="partnerForm" action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя / Название студии" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Телефон">
+                    <textarea name="message" rows="4" placeholder="Расскажите о вашем проекте или потребности в партнерстве"></textarea>
+                    <button type="submit">Отправить заявку</button>
+                </form>
+                <p style="margin-top: 20px; font-size: 14px; text-align: center; color: #475569;">
+                    После проверки анкеты вы получаете доступ к партнерским скидкам Битрикс24.
+                </p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 DevExpert Integration — Официальный партнер Битрикс24</p>
+        <p>ИНН 1234567890 | ОГРН 1234567890123 | Регистрация в продуктовом каталоге Битрикс24: № 4567</p>
+        <p style="margin-top: 16px;">
+            <a href="#" style="color: #94a3b8; margin: 0 12px;">Политика конфиденциальности</a>
+            <a href="#" style="color: #94a3b8; margin: 0 12px;">Реквизиты</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Простая обработка формы (заглушка — отправка на почту + алерт)
+    document.getElementById('partnerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('✅ Спасибо! Ваша заявка получена. Менеджер свяжется с вами в течение 2 часов.\n\nПартнерская программа Битрикс24 — добро пожаловать!');
+        this.reset();
+        // В реальности сюда добавляется AJAX-отправка на ваш бэкенд или email
+    });
+</script>
+
+</body>
+</html>
